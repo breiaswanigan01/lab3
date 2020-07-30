@@ -42,6 +42,21 @@ addSubmission(submissions, "Breia", 45, "2019 - 01 - 07");
 
 console.log(submissions);
 
+// //.PUSH() adding to ENDING of array
+// // let numbers = [1, 2, 3];
+// // numbers.push(4)
+// // console.log(numbers);
+// //UNSHIFT() adding to BEGINNING of array
+// // numbers.unshift(9);
+// // console.log(numbers);
+
+// //EXAMPLE OF UNSHIFT IN FUNCTION
+// const addStringToBeginning = (array, string) => {
+//     array.unshift(string);
+// };
+// addStringToBeginning(strings, "Ann Arbor");
+// console.log(strings);
+
 //3
 const deteleSubmissionByIndezx = (array, index) => {
   array.splice(index, 1);
@@ -49,8 +64,8 @@ const deteleSubmissionByIndezx = (array, index) => {
 
 //4
 const deleteSubmissionByName = (array, name) => {
-  let index = array.findIndex((student) => {
-    return student.name === name;
+  let index = array.findIndex((person) => {
+    return person.name === name;
   });
   array.splice(index, 1);
 };
@@ -90,11 +105,26 @@ const findLowestScore = (array) => {
 };
 console.log(findLowestScore(submissions.score));
 
+//MITCH'S CODE FOR 7
+// const findLowestScore = (array) => {
+//     let currentLowest = array[0];
+//     array.forEach((currentObj) => {
+// if(currentObj.score < currentLowest.score) {
+//     currentLowest = currentObj;
+// }
+// });
+// return currentLowest;
+// }
+
 //8
 const findAverageScore = (array) => {
-  for (let score of findAverageScore) {
+  let sum = 0;
+  for (let item of array) {
+    sum += item.score;
   }
+  return sum / array.length;
 };
+console.log(findAverageScore(submissions));
 
 // 9
 const filterPassing = (array) => {
